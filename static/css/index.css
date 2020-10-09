@@ -1,0 +1,174 @@
+.logo {
+    font-family: 'PT Mono', monospace;
+}
+
+html {
+    min-height: 100vh;
+}
+
+.userprbtn {
+    font-family: 'PT Mono', monospace;
+    min-width: 190px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.exit {
+    color: red;
+}
+
+.dropdown-item:active {
+    background: #f1f2f3 !important;
+    outline: 0px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+.header {
+    min-height: 50px;
+    /* background-color: #ffcc80; */
+    background-color: #ffd180;
+    min-width: 100%;
+    position: fixed;
+    top: 77px;
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px;
+}
+
+.headerItem {
+    display: table-cell;
+    padding: 10px;
+    font-family: 'PT Mono', monospace;
+    font-size: 1.1em;
+}
+
+.headerItem:hover {
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.main {
+    margin-top: 200px;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.tabs {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 100%;
+}
+
+.tabs>input[type="radio"] {
+    display: none;
+}
+
+.tabs>div {
+    /* скрыть контент по умолчанию */
+    display: none;
+    /* border: 1px solid #e0e0e0; */
+    padding: 10px 15px;
+    font-size: 1.2em;
+}
+
+/* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+#tab-btn-1:checked~#genres,
+#tab-btn-2:checked~#popular,
+#tab-btn-3:checked~#news {
+    display: block;
+}
+
+.tabs>label {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 2px 8px;
+    font-size: 1.2em;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+}
+
+.tabs>label:hover {
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+}
+
+.tabs>label:not(:first-of-type) {
+    border-left: none;
+}
+
+.tabs>input[type="radio"]:checked+label {
+    background-color: #fff;
+    border-bottom: 3px solid #0d47a1;
+}
+
+.tabblock {
+    min-height: 500px;
+}
+
+.bookbox {
+    margin-bottom: 1em;
+}
+
+.book {
+    border: 1px solid black;
+    /* min-height: 300px; */
+    max-height: 400px;
+    min-height: 100%;
+    border-radius: 5px;
+}
+
+.book:hover {
+    -webkit-box-shadow: 0px 5px 8px 2px rgba(34, 60, 80, 0.28);
+    -moz-box-shadow: 0px 5px 8px 2px rgba(34, 60, 80, 0.28);
+    box-shadow: 0px 5px 8px 2px rgba(34, 60, 80, 0.28);
+}
+
+.bookImg img {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 396px;
+    min-height: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.bookImg {
+    z-index: 1;
+    position: relative;
+    border-radius: 5px;
+}
+
+.bookDiscrp {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(236, 236, 236, 0.829);
+    bottom: 0px;
+    width: 100%;
+    left: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+    padding: 5px 2px;
+}
+
+.bookDiscrp h4 {
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin-bottom: 0px;
+}

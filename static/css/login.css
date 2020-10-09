@@ -1,0 +1,52 @@
+.main {
+    background-image: url(../images/backinreg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.warp {
+    padding-top: 250px !important;
+    /* background-color: #fff; */
+    padding: 0px 30px;
+    min-height: 100vh;
+}
+
+.main p {
+    color: #4f4f50;
+    text-align: left !important;
+    font-size: 0.86em;
+    margin-left: -10px;
+}
+
+.link {
+    color: #4f4f50;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #EF5B65;
+    text-decoration: none;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+.formInput {
+    border-radius: 50px;
+}
+
+.showHidePwd {
+    border-radius: 50px;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 30px;
+    background-color: rgba(236, 236, 236, 0.829);
+}
