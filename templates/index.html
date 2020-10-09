@@ -3,185 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/827a6fbe84.js"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/827a6fbe84.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="libs/almbb/almbb.css">
     <title>Main page</title>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand logo" href="index.html">E-Book</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="form-inline my-2 my-lg-0 ml-auto mr-auto">
-            <input class="form-control mr-sm-2" type="search"
-                   placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-blue btn-almbb-small my-2 my-sm-0"
-                    type="submit">Search
-            </button>
-        </form>
-        <a type="button" class="btn btn-rounded-blue btn-almbb-small userprbtn"
-           href="login.html" style="display:block">Войти</a>
-        <div class="dropdown person_menu" style="display:none">
-            <button class="btn btn-rounded-blue dropdown-toggle user btn-almbb-small userprbtn"
-                    type="button"
-                    id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                Имя Фамилия
-            </button>
-            <div class="dropdown-menu dropdown-menu-right"
-                 aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item router-link"
-                   style="color: #16181b !important; cursor: pointer;">Мои
-                    книги</a>
-                <div class="dropdown-divider"></div>
-                <button @click="exit()"
-                        class="dropdown-item exit personMenuDrop" href="#">
-                    Выйти
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand logo" href="index.html">
+            <img src="images/logo.png" width="50" height="40" class="d-inline-block align-top" alt=""
+                loading="lazy">
+            E-Book
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0 ml-auto mr-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-blue btn-almbb-small my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <a type="button" class="btn btn-rounded-blue btn-almbb-small userprbtn" href="login.html" style="display:block">Войти</a>
+            <div class="dropdown person_menu" style="display:none">
+                <button class="btn btn-rounded-blue dropdown-toggle user btn-almbb-small userprbtn" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Имя Фамилия
                 </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Мои книги</a>
+                    <div class="dropdown-divider"></div>
+                    <button @click="exit()" class="dropdown-item exit personMenuDrop" href="#">Выйти</button>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
-<!-- Navbar end -->
+    </nav>
+    <!-- Navbar end -->
 
-<!-- Content -->
-<div class="main">
-    <div class="tabs">
-        <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
-        <label for="tab-btn-1">Жанры</label>
-        <input type="radio" name="tab-btn" id="tab-btn-2" value="">
-        <label for="tab-btn-2">Популярные</label>
-        <input type="radio" name="tab-btn" id="tab-btn-3" value="">
-        <label for="tab-btn-3">Новинки</label>
-        <hr style="margin-top: -11px">
-        <div id="genres" class="tabblock">
-            Содержимое 1...
-        </div>
-        <div id="popular" class="tabblock">
-            <div class="books">
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+    <!-- Content -->
+        <div class="main maini">
+            <div class="tabs">
+                <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+                <label for="tab-btn-1">Жанры</label>
+                <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+                <label for="tab-btn-2">Популярные</label>
+                <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+                <label for="tab-btn-3">Новинки</label>
+                <hr style="margin-top: -11px">
+                <div id="genres" class="tabblock">
+                    Содержимое 1...
+                </div>
+                <div id="popular" class="tabblock">
+                    <div class="books">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/backinreg.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
-                        <div class="book">
-                            <div class="bookImg">
-                                <img src="images/1.jpg" alt="">
-                                <div class="bookDiscrp">
-                                    <h4>Test book name</h4>
-                                    <small>Test author name</small>
+                            <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
+                                <div class="book">
+                                    <div class="bookImg">
+                                        <img src="images/1.jpg" alt="">
+                                        <div class="bookDiscrp">
+                                            <h4>Test book name</h4>
+                                            <small>Test author name</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="news" class="tabblock">
+                    Содержимое 3...
+                </div>
             </div>
         </div>
-        <div id="news" class="tabblock">
-            Содержимое 3...
-        </div>
-    </div>
-</div>
-<!-- End content -->
+    <!-- End content -->
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-<script src="libs/almbb/almbb.js"></script>
+    <script src="libs/almbb/almbb.js"></script>
 </body>
 </html>

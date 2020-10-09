@@ -17,7 +17,10 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand logo" href="index.html">E-Book</a>
+        <a class="navbar-brand logo" href="index.html">
+            <img src="images/logo.png" width="50" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+            E-Book
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -49,23 +52,25 @@
             <div class="container warp">
                 <div class="box mt-auto mb-auto">
                     <form class="formbox needs-validation" novalidate>
-                        <h2 style="text-align: center;">Войти</h2>
-                        <div class="form-group" style="text-align: left">
-                            <label for="exampleInputEmail1">Email адресс</label>
-                            <input name="email" class="form-control formInput" placeholder="example@gmail.com" required>
-                        </div>
-                        <div style="text-align: left">
-                            <label for="password">Пароль</label>
-                        </div>
-                        <div class="form-label-group input-group">
-                            <input type="password" id="password" class="form-control formInput" name="password" placeholder="Пароль"
-                                required>
+                        <h2 style="text-align: center; font-family: 'PT Mono', monospace;">Войти</h2>
+                        <div class="input-group flex-nowrap">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text formInput" id="addon-wrapping"><i class="far fa-envelope"></i></span>
+                            </div>
+                            <input type="email" name="email" class="form-control formInput" placeholder="example@gmail.com" aria-label="email"
+                                aria-describedby="addon-wrapping">
+                        </div> <br>
+                        <div class="input-group flex-nowrap">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text formInput" id="addon-wrapping"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control formInput" name="password" placeholder="Пароль" required>
                             <div class="input-group-append" @click="showHidePwd()" style="cursor: pointer;">
                                 <span class="input-group-text showHidePwd">
                                     <i id="eye" class="far fa-eye-slash"></i>
                                 </span>
                             </div>
-                        </div>
+                        </div><br>
                         <div class="form-row">
                             <button class="btn btn-rounded-blue btn-lg" @click="loginUser()">Войти</button>
                         </div>
