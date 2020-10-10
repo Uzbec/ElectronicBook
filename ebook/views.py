@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.utils import timezone
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
+from ebook.models import users_inf
+from django.views.generic.edit import FormView
 
 
 def index(request):
