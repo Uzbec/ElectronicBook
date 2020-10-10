@@ -3,12 +3,12 @@ from django.utils import timezone
 
 
 def index(request):
-    return render(request, 'templates/index.html', {})
+    return render(request, 'index.html')
 
 
 def login(request):
-    return render(request, "templates/login.html")
+    return render(request, "login.html")
 
 
 def registration(request):
-    return render(request, "templates/registration.html")
+    return render(request, "registration.html")
