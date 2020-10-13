@@ -1,4 +1,126 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}
+    E-book
+{% endblock title %}
+{% block links %}
+    <link rel="stylesheet" href="static/css/index.css">
+{% endblock links %}
+
+{% block content %}
+    <div class="main maini">
+        <div class="tabs">
+            <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+            <label for="tab-btn-1">Жанры</label>
+            <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+            <label for="tab-btn-2">Популярные</label>
+            <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+            <label for="tab-btn-3">Новинки</label>
+            <hr style="margin-top: -11px">
+            <div id="genres" class="tabblock">
+                Содержимое 1...
+            </div>
+            <div id="popular" class="tabblock">
+                <div class="books">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4  col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/backinreg.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div class="book">
+                                <div class="bookImg">
+                                    <img src="static/images/1.jpg" alt="">
+                                    <div class="bookDiscrp">
+                                        <h4>Test book name</h4>
+                                        <small>Test author name</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="news" class="tabblock">
+                Содержимое 3...
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% comment %} <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -171,4 +293,4 @@
         crossorigin="anonymous"></script>
     <script src="static/libs/almbb/almbb.js"></script>
 </body>
-</html>
+</html> {% endcomment %}

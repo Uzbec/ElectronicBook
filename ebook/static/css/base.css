@@ -1,0 +1,30 @@
+.logo {
+    font-family: 'PT Mono', monospace;
+    font-size: 1.55em;
+}
+
+html {
+    min-height: 100vh;
+}
+
+
+.userprbtn {
+    font-family: 'PT Mono', monospace;
+    min-width: 190px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+
+.exit {
+    color: red;
+}
+
+.dropdown-item:active {
+    background: #f1f2f3 !important;
+    outline: 0px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
