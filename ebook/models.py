@@ -29,6 +29,9 @@ class book_inf(models.Model):
     rate = models.PositiveIntegerField("Рейтинг книги", default=0,
                                        validators=[MaxValueValidator(5), ])
     discriptions = models.TextField("описание книги")
+    bookimage = models.ImageField("Фотография книги", blank=True,
+                              upload_to="puples_photo",
+                              default="puples_photo/default.png")
 
     def __str__(self):
         return self.bookname
