@@ -28,4 +28,4 @@ class book_inf(models.Model):
     discriptions = models.TextField("описание книги")
 
     def __str__(self):
-        return self.name
+        return self.bookname
