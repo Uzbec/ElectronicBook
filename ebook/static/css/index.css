@@ -1,62 +1,8 @@
-.logo {
-    font-family: 'PT Mono', monospace;
-}
-
-html {
-    min-height: 100vh;
-}
-
 .maini {
     padding-top: 250px !important;
     /* background-color: #fff; */
     padding: 0px 30px;
     min-height: 100vh;
-}
-
-.userprbtn {
-    font-family: 'PT Mono', monospace;
-    min-width: 190px;
-    text-transform: capitalize;
-    font-weight: bold;
-}
-
-.exit {
-    color: red;
-}
-
-.dropdown-item:active {
-    background: #f1f2f3 !important;
-    outline: 0px;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-}
-
-.header {
-    min-height: 50px;
-    /* background-color: #ffcc80; */
-    background-color: #ffd180;
-    min-width: 100%;
-    position: fixed;
-    top: 77px;
-    display: table;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0px;
-}
-
-.headerItem {
-    display: table-cell;
-    padding: 10px;
-    font-family: 'PT Mono', monospace;
-    font-size: 1.1em;
-}
-
-.headerItem:hover {
-    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
 }
 
 /* .main {
