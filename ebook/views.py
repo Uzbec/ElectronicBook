@@ -6,7 +6,7 @@ from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import book_inf
+from .models import book_inf, users_inf
 
 
 def index(request):
@@ -22,12 +22,21 @@ def registration(request):
     return render(request, "registration.html")
 
 
-def reg(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('index')
-    else:
-        form = UserCreationForm()
-        return render(request, 'registration.html', {'form': form})
+def reg_user(request):
+    if request.method == "POST":
+        # loginName = request.POST.get("loginN")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        firstName = request.POST.get("first_name")
+        lastName = request.POST.get("last_name")
+        birthday = request.POST.get("birthday")
+        # Создайте пользователя и сохраните его в базе данных
+        new_user = User.objects.create_user(
+            username=email, email=email, password=password)
+        # Обновите поля и сохраните их снова
+        new_user.first_name = firstName
+        new_user.last_name = lastName
+        new_user.save()
+        user_inf = users_inf.objects.create(user=new_user)
+        user_inf.date_of_birth = birthday
+    return HttpResponseRedirect("/login/")

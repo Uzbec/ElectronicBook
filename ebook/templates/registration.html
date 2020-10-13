@@ -11,14 +11,15 @@
     <div class="main">
             <div class="container warp">
                 <div class="box mt-auto mb-auto">
-                    <form class="formbox">
+                    <form class="formbox" method="POST" action="reg_user/">
+                        {% csrf_token %}
                         <h2 style="text-align: center; font-family: 'PT Mono', monospace;">Регистрация</h2> <br>
                         <div class="input-group row">
                             <div class="input-group-prepend">
                                 <span class="input-group-text formInput">Имя и Фамилия</span>
                             </div>
-                            <input type="text" name="name" aria-label="First name" class="form-control">
-                            <input type="text" name="surname" aria-label="Last name" class="form-control formInput">
+                            <input type="text" name="first_name" aria-label="First name" class="form-control">
+                            <input type="text" name="last_name" aria-label="Last name" class="form-control formInput">
                         </div> <br>
                         <div class="input-group flex-nowrap row">
                             <div class="input-group-prepend">
@@ -31,7 +32,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text formInput" id="addon-wrapping"><i class="fas fa-calendar-day"></i></span>
                             </div>
-                            <input type="date" class="form-control formInput" name="age" min="1900-01-01" required>
+                            <input type="date" class="form-control formInput" name="birthday" min="1900-01-01" required>
                         </div><br>
                         <div class="input-group flex-nowrap row">
                             <div class="input-group-prepend">
@@ -56,7 +57,7 @@
                             <input type="password" class="form-control formInput" name="code" placeholder="Код подтверждения">
                         </div> -->
                         <div class="row">
-                            <button class="btn btn-rounded-blue btn-lg" @click="addUser()">Зарегистрироваться</button>
+                            <button class="btn btn-rounded-blue btn-lg" type="submit">Зарегистрироваться</button>
                         </div>
                     </form> <br>
                 </div>

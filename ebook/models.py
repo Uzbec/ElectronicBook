@@ -5,18 +5,16 @@ from django.core.validators import MaxValueValidator
 
 
 class users_inf(models.Model):
-    name = models.CharField("Имя", null=True, max_length=50)
-    surname = models.CharField("Фамилия", null=True, max_length=100)
     image = models.ImageField("Фотография профиля", blank=True,
                               upload_to="puples_photo",
                               default="puples_photo/default.png")
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 default='',
                                 verbose_name="Связь с таблицей пользователей")
-    cal = models.DateTimeField(default=timezone.now)
+    date_of_birth = models.DateField(blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return 'Profile for user {}'.format(self.user.username)
 
 
 class book_inf(models.Model):
