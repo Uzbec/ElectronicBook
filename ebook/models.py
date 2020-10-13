@@ -1,11 +1,7 @@
-from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
 
 
 class users_inf(models.Model):
