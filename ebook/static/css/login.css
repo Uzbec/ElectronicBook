@@ -37,7 +37,7 @@ i:hover {
     cursor: pointer;
 }
 
-.formInput {
+.formInput input{
     border-radius: 50px;
 }
 
