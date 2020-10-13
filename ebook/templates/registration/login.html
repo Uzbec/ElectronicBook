@@ -6,7 +6,6 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock links %}
-{% load crispy_forms_tags %}
 {% block content %}
     <div class="main">
             <div class="container warp">
@@ -37,7 +36,7 @@
                                 </div>
                             </div><br>
                             <div class="form-row">
-                                <button class="btn btn-rounded-blue btn-lg" @click="loginUser()">Войти</button>
+                                <button class="btn btn-rounded-blue btn-lg">Войти</button>
                             </div>
                         </form> <br>
                         <p>
