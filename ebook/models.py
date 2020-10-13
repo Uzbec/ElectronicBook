@@ -3,6 +3,9 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 
 class users_inf(models.Model):
@@ -28,4 +31,4 @@ class book_inf(models.Model):
     discriptions = models.TextField("описание книги")
 
     def __str__(self):
-        return self.name
+        return self.bookname
