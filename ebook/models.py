@@ -30,8 +30,8 @@ class book_inf(models.Model):
                                        validators=[MaxValueValidator(5), ])
     discriptions = models.TextField("описание книги")
     bookimage = models.ImageField("Фотография книги", blank=True,
-                              upload_to="puples_photo",
-                              default="puples_photo/default.png")
+                              upload_to="books_photo",
+                              default="books_photo/default.png")
 
     def __str__(self):
         return self.bookname

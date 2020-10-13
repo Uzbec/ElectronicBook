@@ -6,9 +6,12 @@ from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
+from .models import book_inf
+
 
 def index(request):
-    return render(request, 'index.html')
+    books = book_inf.objects.all()
+    return render(request, 'index.html', {'books': books})
 
 
 def login(request):
