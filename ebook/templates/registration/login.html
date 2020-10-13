@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     E-book
 {% endblock title %}
 {% block links %}
-    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock links %}
 
 {% block content %}
@@ -35,7 +36,7 @@
                         </div>
                     </form> <br>
                     <p>
-                        <a href="registration" class="link">Еще нет аккаунта? Зарегистрируйтесь</a>
+                        <a href="/registration" class="link">Еще нет аккаунта? Зарегистрируйтесь</a>
                     </p>
                 </div>
             </div>

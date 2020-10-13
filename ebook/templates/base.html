@@ -1,16 +1,16 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/827a6fbe84.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="static/libs/almbb/almbb.css">
+    <link rel="stylesheet" href="{% static 'libs/almbb/almbb.css' %}">
     <title> {% block title %}{% endblock title %} </title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block links %}
     {% endblock links %}
 </head>
@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand logo" href="/">
-            <img src="static/images/logo.png" width="50" height="40"
+            <img src="{% static 'images/logo.png' %}" width="50" height="40"
                  class="d-inline-block align-top" alt=""
                 loading="lazy">
             E-Book
@@ -65,6 +65,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
-    <script src="static/libs/almbb/almbb.js"></script>
+    <script src="{% static 'libs/almbb/almbb.js' %}"></script>
 </body>
 </html>
