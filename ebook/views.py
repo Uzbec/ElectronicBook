@@ -8,6 +8,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 from .models import book_inf, users_inf
 
+# import time
+
 
 def index(request):
     books = book_inf.objects.all()
@@ -30,6 +32,7 @@ def reg_user(request):
         firstName = request.POST.get("first_name")
         lastName = request.POST.get("last_name")
         birthday = request.POST.get("birthday")
+        print(birthday)
         # Создайте пользователя и сохраните его в базе данных
         new_user = User.objects.create_user(
             username=email, email=email, password=password)
@@ -39,4 +42,5 @@ def reg_user(request):
         new_user.save()
         user_inf = users_inf.objects.create(user=new_user)
         user_inf.date_of_birth = birthday
+        user_inf.save()
     return HttpResponseRedirect("/login/")
