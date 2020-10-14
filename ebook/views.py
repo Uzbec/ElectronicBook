@@ -44,3 +44,9 @@ def reg_user(request):
         user_inf.date_of_birth = birthday
         user_inf.save()
     return HttpResponseRedirect("/login/")
+
+
+def userbooks(request, userid):
+    books = book_inf.objects.all()
+    user = User.objects.get(id  = userid)
+    return render(request, 'userbooks.html', {'books': books, 'user': user})
