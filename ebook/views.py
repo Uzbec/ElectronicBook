@@ -50,3 +50,7 @@ def userbooks(request, userid):
     books = book_inf.objects.all()
     user = User.objects.get(id  = userid)
     return render(request, 'userbooks.html', {'books': books, 'user': user})
+
+
+def profile(request):
+    return render(request, 'profile.html')
