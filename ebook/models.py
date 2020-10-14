@@ -5,6 +5,12 @@ from django.core.validators import MaxValueValidator
 
 
 class users_inf(models.Model):
+    STATUS_CHOICES = (
+        ('ST', 'Ученик'),
+        ('SADM', 'Администратор'),
+        ('LIBR', 'Библиотекарь')
+    )
+
     image = models.ImageField("Фотография профиля", blank=True,
                               upload_to="puples_photo",
                               default="puples_photo/default.png")
@@ -12,6 +18,8 @@ class users_inf(models.Model):
                                 default='',
                                 verbose_name="Связь с таблицей пользователей")
     date_of_birth = models.DateField(blank=True, null=True)
+    status = models.CharField("Статуc", choices=STATUS_CHOICES, default='ST',
+                              max_length=30)
 
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
@@ -24,8 +32,18 @@ class book_inf(models.Model):
                                        validators=[MaxValueValidator(5), ])
     discriptions = models.TextField("описание книги")
     bookimage = models.ImageField("Фотография книги", blank=True,
-                              upload_to="books_photo",
-                              default="books_photo/default.png")
+                                  upload_to="books_photo",
+                                  default="books_photo/default.png")
 
     def __str__(self):
         return self.bookname
+
+
+class userbook(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
+                                default='',
+                                verbose_name="Связь с таблицей пользователей")
+    booksid = models.CharField("id книги", max_length=30, default='')
+
+    def __str__(self):
+        return self.user
