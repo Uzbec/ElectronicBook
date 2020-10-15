@@ -3,7 +3,7 @@
     font-size: 1.55em;
 }
 
-html {
+html, body {
     min-height: 100vh;
 }
 
