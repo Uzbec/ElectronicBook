@@ -52,5 +52,5 @@ def userbooks(request, userid):
     return render(request, 'userbooks.html', {'books': books, 'user': user})
 
 
-def profile(request):
+def userprofile(request):
     return render(request, 'userprofile.html')
