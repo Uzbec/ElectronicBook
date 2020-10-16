@@ -39,7 +39,11 @@
                     {{ user.first_name }} {{ user.last_name }}
                 </button>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a href="/profile" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Профиль</a>
                     <a href="/userbooks/{{user.id}}" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Мои книги</a>
+                    {% if user.users_inf.status == "SADM" %}
+                        <a href="/admin" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Админ панель</a>
+                    {% endif %}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item exit personMenuDrop" href="{% url 'logout'%}">Выйти</a>
                 </div>

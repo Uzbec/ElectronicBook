@@ -20,6 +20,8 @@ class users_inf(models.Model):
     date_of_birth = models.DateField(blank=True, null=True)
     status = models.CharField("Статуc", choices=STATUS_CHOICES, default='ST',
                               max_length=30)
+    grade = models.IntegerField("Класс", default="-1")
+    gardesymbol = models.CharField("Символ класса", max_length=1, default="-")
 
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
