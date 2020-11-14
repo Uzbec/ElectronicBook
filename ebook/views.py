@@ -54,3 +54,8 @@ def userbooks(request, userid):
 
 def userprofile(request):
     return render(request, 'userprofile.html')
+
+
+def libradmin(request):
+    books = book_inf.objects.all()
+    return render(request, 'libradmin.html', {'books': books})

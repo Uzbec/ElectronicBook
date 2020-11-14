@@ -8,4 +8,5 @@ urlpatterns = [
     path('reg_user/', views.reg_user),
     path('userbooks/<int:userid>', views.userbooks, name='userbooks'),
     path('userprofile', views.userprofile, name='userprofile'),
+    path('libradmin', views.libradmin, name='libradmin'),
 ]
