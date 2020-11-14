@@ -10,12 +10,28 @@
 {% block content %}
     <div class="main">
         <div class="row">
-            <div class="col-12 col-lg-4">
-                <button class="btn btn-rounded-almbb-success">Добавить книгу</button>
-            </div>
-            <div class="col-12 col-lg-4">
-                <button class="btn btn-rounded-almbb-danger">Удалить книгу</button>
-            </div> 
+            <form class="col-12 col-lg-6" method="POST" action="">
+                <div class="form-group">
+                    <label for="Bookname">Название книги</label>
+                    <input name="Bookname" type="text" class="form-control" id="Bookname">
+                </div>
+                <div class="form-group">
+                    <label for="Bookauthor">Автор</label>
+                    <input name="Bookauthor" type="text" class="form-control" id="Bookauthor">
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="bookimg">
+                    <label name="bookimg" class="custom-file-label" for="bookimg">Choose file</label>
+                </div>
+                <button type="submit" class="btn btn-rounded-almbb-success">Добавить книгу</button>
+            </form>
+            <form class="col-12 col-lg-6" method="POST" action="">
+                <div class="form-group">
+                    <label for="Bookid">Id книги</label>
+                    <input name="Bookid" type="text" class="form-control" id="Bookid">
+                </div>
+                <button type="submit" class="btn btn-rounded-almbb-danger">Удалить книгу</button>
+            </form>
         </div>
         <div class="allbooks">
             <div class="row">
@@ -26,7 +42,8 @@
                                 <img src="{{ bookItem.bookimage.url }}" alt="">
                                 <div class="bookDiscrp">
                                     <h4>{{ bookItem.bookname }}</h4>
-                                    <small>{{ bookItem.author }}</small>
+                                    <small>{{ bookItem.author }}</small> <br/>
+                                    <small>id книги: {{ bookItem.id }}</small>
                                 </div>
                             </div>
                          </div>
