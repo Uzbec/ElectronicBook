@@ -1,15 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from ebook.models import users_inf
+from ebook.models import userbook
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
 from .models import book_inf, users_inf
 
-# import time
 
+# import time
+# TODO:кнопка добавить
 
 def index(request):
     books = book_inf.objects.all()
@@ -47,8 +48,8 @@ def reg_user(request):
 
 
 def userbooks(request, userid):
-    books = book_inf.objects.all()
-    user = User.objects.get(id  = userid)
+    books = book_inf.objects(id=userbook.booksid)
+    user = User.objects.get(id=userid)
     return render(request, 'userbooks.html', {'books': books, 'user': user})
 
 
@@ -59,3 +60,10 @@ def userprofile(request):
 def libradmin(request):
     books = book_inf.objects.all()
     return render(request, 'libradmin.html', {'books': books})
+
+
+def addbooktome(request, user_id, book_id):
+    print("sucscess add")
+    userbook.booksid = book_id
+    userbook.user = user_id
+    return render(request, 'userbooks.html')
