@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    E-book
+{% endblock title %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/managingbookslibr.css' %}">
+{% endblock links %}
+
+{% block content %}
+    <div class="main">
+        <h3 style="text-align: center">Учет книг</h3>
+        <div class="allbooks">
+            <div class="row">
+                {% for bookItem in books  %}
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                        <div class="book">
+                            <div class="bookImg">
+                                <img src="{{ bookItem.bookimage.url }}" alt="">
+                                <div class="bookDiscrp">
+                                    <h4>{{ bookItem.bookname }}</h4>
+                                    <small>{{ bookItem.author }}</small> <br/>
+                                    <small>id книги: {{ bookItem.id }}</small>
+                                </div>
+                            </div>
+                            <div class="row" style="padding: 0px 15px">
+                                <a href="confirmaddbooktouser?bookid={{bookItem.id}}&userid={{user.id}}" class="btn btn-almbb-small btn-almbb-success col-12 col-lg-6">Добавить</a>
+                                <a href="canceladdbooktouser?bookid={{bookItem.id}}" class="btn btn-almbb-small btn-almbb-danger col-12 col-lg-6">Отменить</a>
+                            </div>
+                         </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

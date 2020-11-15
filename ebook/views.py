@@ -67,3 +67,8 @@ def addbooktome(request, user_id, book_id):
     userbook.booksid = book_id
     userbook.user = user_id
     return render(request, 'userbooks.html')
+
+
+def managingbookslibr(request):
+    books = book_inf.objects.all()
+    return render(request, 'managingbookslibr.html', {'books': books})

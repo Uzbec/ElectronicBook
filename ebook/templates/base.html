@@ -48,6 +48,9 @@
                     {% if user.users_inf.status == "LIBR" %}
                         <a href="/libradmin" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Панель Библиотекаря</a>
                     {% endif %}
+                    {% if user.users_inf.status == "LIBR" %}
+                        <a href="/managingbookslibr" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Учет книг</a>
+                    {% endif %}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item exit personMenuDrop" href="{% url 'logout'%}">Выйти</a>
                 </div>
