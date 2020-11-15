@@ -64,9 +64,10 @@ def libradmin(request):
 
 def requestforaddbook(request):
     print("sucscess add")
-    print(request.GET.get("bookid",""))
-    print(request.GET.get("bookid",""))
-    return render(request, 'userbooks.html')
+    print(request.GET.get("bookid", ""))
+    print(request.GET.get("userid", ""))
+
+    return render(request, 'index.html')
 
 
 def managingbookslibr(request):
