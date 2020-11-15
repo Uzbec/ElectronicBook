@@ -2,6 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator
+import datetime
+from django.utils import timezone
 
 
 class users_inf(models.Model):
@@ -36,7 +38,8 @@ class book_inf(models.Model):
     bookimage = models.ImageField("Фотография книги", blank=True,
                                   upload_to="books_photo",
                                   default="books_photo/default.png")
-
+    addingDate = models.DateField("Дата добавления",
+                                  default=timezone.now)
     def __str__(self):
         return self.bookname
 
