@@ -40,15 +40,26 @@ class book_inf(models.Model):
                                   default="books_photo/default.png")
     addingDate = models.DateField("Дата добавления",
                                   default=timezone.now)
+    bookfile = models.FileField(upload_to='books', blank=False, default="puples_photo/default.png")
+
     def __str__(self):
         return self.bookname
 
 
 class userbook(models.Model):
+    CHOICES = (
+        ('True', 'Подтверждено библиотекарем'),
+        ('False', 'В обработке')
+    )
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 default='',
                                 verbose_name="Связь с таблицей пользователей")
     booksid = models.CharField("id книги", max_length=30, default='')
+    status = models.CharField("Статуc", choices=CHOICES, default='False',
+                              max_length=10)
+    reqestdate = models.DateField("Дата добавления", default=timezone.now)
+    getdate = models.DateField(default=timezone.now)
+    enddate = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.user
