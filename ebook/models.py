@@ -40,7 +40,8 @@ class book_inf(models.Model):
                                   default="books_photo/default.png")
     addingDate = models.DateField("Дата добавления",
                                   default=timezone.now)
-    bookfile = models.FileField(upload_to='books', blank=False, default="puples_photo/default.png")
+    bookfile = models.FileField(upload_to='books', blank=False,
+                                default="puples_photo/default.png")
 
     def __str__(self):
         return self.bookname
@@ -62,4 +63,4 @@ class userbook(models.Model):
     enddate = models.DateField(default=timezone.now)
 
     def __str__(self):
-        return self.user
+        return 'Book {} for user {}'.format(self.booksid, self.user.username)

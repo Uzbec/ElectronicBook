@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from ebook.models import userbook
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import book_inf, users_inf
+from .models import book_inf, users_inf, userbook
 
 
 # import time
@@ -69,10 +68,15 @@ def libradmin(request):
 
 
 def requestforaddbook(request):
+    userid = request.GET.get("userid", "")
+    bookid = request.GET.get("bookid", "")
+    user = User.objects.get(id=userid)
+    book = userbook.objects.create(user=user)
+    book.bookid = bookid
+    book.save()
     print("sucscess add")
     print(request.GET.get("bookid", ""))
     print(request.GET.get("userid", ""))
-
     return render(request, 'index.html')
 
 
