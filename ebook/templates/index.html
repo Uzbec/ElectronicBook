@@ -33,8 +33,9 @@
                                             <small>{{ bookItem.author }}</small>
                                         </div>
                                     </div>
-                                    <a
-                                            href="addbooktome?bookid={{bookItem.id}}&userid={{user.id}}" class="btn btn-almbb-small btn-almbb-success">Добавить</a>
+                                    {% if user.users_inf.status == "ST" %}
+                                        <a href="addbooktome?bookid={{bookItem.id}}&userid={{user.id}}" class="btn btn-almbb-small btn-almbb-success">Добавить</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endfor %}
