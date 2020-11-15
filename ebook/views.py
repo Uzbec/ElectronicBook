@@ -62,9 +62,11 @@ def libradmin(request):
     return render(request, 'libradmin.html', {'books': books})
 
 
-def addbooktome(request, user_id, book_id):
+def requestforaddbook(request, book_id, user_id):
     print("sucscess add")
     userbook.booksid = book_id
+    print(book_id)
+    print(user_id)
     userbook.user = user_id
     return render(request, 'userbooks.html')
 
