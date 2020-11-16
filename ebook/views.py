@@ -45,11 +45,11 @@ def reg_user(request):
         user_inf.save()
     return HttpResponseRedirect("/login/")
 
-
 def userbooks(request, userid):
-    books = book_inf.objects(id=userbook.booksid)
     user = User.objects.get(id=userid)
-    return render(request, 'userbooks.html', {'books': books, 'user': user})
+    books = userbook.objects.filter(user=user)
+    print(books)
+    return render(request, 'userbooks.html', {'books': books, 'user':user})
 
 
 def userprofile(request):
