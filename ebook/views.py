@@ -51,11 +51,12 @@ def reg_user(request):
         user_inf.save()
     return HttpResponseRedirect("/login/")
 
+
 def userbooks(request, userid):
     user = User.objects.get(id=userid)
     books = userbook.objects.filter(user=user)
     print(books)
-    return render(request, 'userbooks.html', {'books': books, 'user':user})
+    return render(request, 'userbooks.html', {'books': books, 'user': user})
 
 
 def userprofile(request):
@@ -81,5 +82,5 @@ def requestforaddbook(request):
 
 
 def managingbookslibr(request):
-    books = book_inf.objects.all()
+    books = userbook.objects.filter(status="False")
     return render(request, 'managingbookslibr.html', {'books': books})
