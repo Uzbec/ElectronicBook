@@ -13,4 +13,8 @@ urlpatterns = [
          name='requestforaddbook'),
     path('managingbookslibr', views.managingbookslibr,
          name='managingbookslibr'),
+    path('confirmaddbooktouser', views.confirmaddbooktouser,
+         name='confirmaddbooktouser'),
+    path('canceladdbooktouser', views.canceladdbooktouser,
+         name='canceladdbooktouser'),
 ]

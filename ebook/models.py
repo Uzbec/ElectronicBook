@@ -50,14 +50,15 @@ class book_inf(models.Model):
 class userbook(models.Model):
     CHOICES = (
         ('True', 'Подтверждено библиотекарем'),
-        ('False', 'В обработке')
+        ('False', 'В обработке'),
+        ('Refused', 'Отказано')
     )
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 default='',
                                 verbose_name="Связь с таблицей пользователей")
     booksid = models.CharField("id книги", max_length=30, default='')
     status = models.CharField("Статуc", choices=CHOICES, default='False',
-                              max_length=10)
+                              max_length=30)
     reqestdate = models.DateField("Дата добавления", default=timezone.now)
     getdate = models.DateField(default=timezone.now)
     enddate = models.DateField(default=timezone.now)
