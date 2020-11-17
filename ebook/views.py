@@ -72,9 +72,10 @@ def requestforaddbook(request):
     userid = request.GET.get("userid", "")
     bookid = request.GET.get("bookid", "")
     user = User.objects.get(id=userid)
-    book = userbook.objects.create(user=user)
-    book.bookid = bookid
-    book.save()
+    book = book_inf.objects.get(id=bookid)
+    new_book = userbook.objects.create(user=user)
+    new_book.book = book
+    new_book.save()
     print("sucscess add")
     print(request.GET.get("bookid", ""))
     print(request.GET.get("userid", ""))

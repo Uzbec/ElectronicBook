@@ -56,7 +56,10 @@ class userbook(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
                                 default='',
                                 verbose_name="Связь с таблицей пользователей")
-    booksid = models.CharField("id книги", max_length=30, default='')
+    # booksid = models.CharField("id книги", max_length=30, default='')
+    book = models.OneToOneField(book_inf, on_delete=models.CASCADE, null=True,
+                                default='',
+                                verbose_name="Связь с таблицей книг")
     status = models.CharField("Статуc", choices=CHOICES, default='False',
                               max_length=30)
     reqestdate = models.DateField("Дата добавления", default=timezone.now)
