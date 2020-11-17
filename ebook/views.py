@@ -78,7 +78,8 @@ def requestforaddbook(request):
     print("sucscess add")
     print(request.GET.get("bookid", ""))
     print(request.GET.get("userid", ""))
-    return render(request, 'index.html')
+    # return render(request, 'index.html')
+    return HttpResponseRedirect("/")
 
 
 def managingbookslibr(request):
@@ -93,7 +94,8 @@ def confirmaddbooktouser(request):
     confirmedbook = userbook(user=user, booksid=bookid, status="True")
     confirmedbook.save()
     books = userbook.objects.filter(status="False")
-    return render(request, 'managingbookslibr.html', {'books': books})
+    # return render(request, 'managingbookslibr.html', {'books': books})
+    return HttpResponseRedirect("/managingbookslibr/")
 
 
 def canceladdbooktouser(request):
@@ -103,8 +105,8 @@ def canceladdbooktouser(request):
     confirmedbook = userbook(user=user, booksid=bookid, status="Refused")
     confirmedbook.save()
     books = userbook.objects.filter(status="False")
-    return render(request, 'managingbookslibr.html', {'books': books})
-
+    # return render(request, 'managingbookslibr.html', {'books': books})
+    return HttpResponseRedirect("/managingbookslibr/")
 
 def add_book(request):
     Bookname = request.POST.get("Bookname")
@@ -118,4 +120,5 @@ def add_book(request):
     newbook.bookimage = bookimg
     newbook.bookfile = bookfile
     newbook.save()
-    return render(request, 'libradmin.html')
+    # return render(request, 'libradmin.html')
+    return HttpResponseRedirect("/libradmin/")
