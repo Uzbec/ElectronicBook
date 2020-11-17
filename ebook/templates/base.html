@@ -41,7 +41,9 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                     <a href="/userprofile" class="dropdown-item router-link"
                        style="color: #16181b !important; cursor: pointer;">Профиль</a>
-                    <a href="/userbooks/{{user.id}}" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Мои книги</a>
+                    {% if user.users_inf.status == "ST" %}
+                        <a href="/userbooks/{{user.id}}" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Мои книги</a>
+                    {% endif %}
                     {% if user.users_inf.status == "SADM" %}
                         <a href="/admin" class="dropdown-item router-link" style="color: #16181b !important; cursor: pointer;">Админ панель</a>
                     {% endif %}
