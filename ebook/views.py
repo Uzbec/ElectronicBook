@@ -55,7 +55,6 @@ def reg_user(request):
 def userbooks(request, userid):
     user = User.objects.get(id=userid)
     books = userbook.objects.filter(user=user)
-    print(books)
     return render(request, 'userbooks.html', {'books': books, 'user': user})
 
 
