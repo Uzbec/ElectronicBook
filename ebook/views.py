@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-
+from django.utils import timezone
 from .models import book_inf, users_inf, userbook
 
 
@@ -105,3 +105,18 @@ def canceladdbooktouser(request):
     confirmedbook.save()
     books = userbook.objects.filter(status="False")
     return render(request, 'managingbookslibr.html', {'books': books})
+
+
+def add_book(request):
+    Bookname = request.POST.get("Bookname")
+    Bookauthor = request.POST.get("Bookauthor")
+    discriptions = request.POST.get("discriptions")
+    bookimg = request.POST.get("bookimg")
+    bookfile = request.POST.get("bookfile")
+    newbook = book_inf.objects.create()
+    newbook.Bookname = Bookname
+    newbook.Bookauthor = Bookauthor
+    newbook.discriptions = discriptions
+    newbook.bookimg = bookimg
+    newbook.bookfile = bookfile
+    return render(request, 'libradmin.html')

@@ -17,4 +17,5 @@ urlpatterns = [
          name='confirmaddbooktouser'),
     path('canceladdbooktouser', views.canceladdbooktouser,
          name='canceladdbooktouser'),
+    path('add_book', views.add_book, name='add_book'),
 ]
