@@ -112,10 +112,10 @@ def add_book(request):
     discriptions = request.POST.get("discriptions")
     bookimg = request.POST.get("bookimg")
     bookfile = request.POST.get("bookfile")
-    newbook = book_inf.objects.create()
-    newbook.Bookname = Bookname
-    newbook.Bookauthor = Bookauthor
+    newbook = book_inf.objects.create(bookname=Bookname)
+    newbook.author = Bookauthor
     newbook.discriptions = discriptions
-    newbook.bookimg = bookimg
+    newbook.bookimage = bookimg
     newbook.bookfile = bookfile
+    newbook.save()
     return render(request, 'libradmin.html')
