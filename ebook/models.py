@@ -67,4 +67,4 @@ class userbook(models.Model):
     enddate = models.DateField(default=timezone.now)
 
     def __str__(self):
-        return 'Book {} for user {}'.format(self.booksid, self.user.username)
+        return 'Book {} for user {}'.format(self.book.id, self.user.username)
