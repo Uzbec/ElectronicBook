@@ -16,16 +16,16 @@
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
                         <div class="book">
                             <div class="bookImg">
-                                <img src="{{ bookItem.bookimage.url }}" alt="">
+                                <img src="{{ bookItem.book.bookimage.url }}" alt="">
                                 <div class="bookDiscrp">
-                                    <h4>{{ bookItem.bookname }}</h4>
-                                    <small>{{ bookItem.author }}</small> <br/>
-                                    <small>id книги: {{ bookItem.id }}</small>
+                                    <h4>{{ bookItem.book.bookname }}</h4>
+                                    <small>{{ bookItem.book.author }}</small> <br/>
+                                    <small>id книги: {{ bookItem.book.id }}</small>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0px 15px">
-                                <a href="confirmaddbooktouser?bookid={{bookItem.id}}&userid={{bookItem.user.id}}" class="btn btn-almbb-small btn-almbb-success col-12 col-lg-6">Добавить</a>
-                                <a href="canceladdbooktouser?bookid={{bookItem.id}}&userid={{bookItem.user.id}}" class="btn btn-almbb-small btn-almbb-danger col-12 col-lg-6">Отменить</a>
+                                <a href="confirmaddbooktouser?bookid={{bookItem.book.id}}&userid={{bookItem.user.id}}" class="btn btn-almbb-small btn-almbb-success col-12 col-lg-6">Добавить</a>
+                                <a href="canceladdbooktouser?bookid={{bookItem.book.id}}&userid={{bookItem.user.id}}" class="btn btn-almbb-small btn-almbb-danger col-12 col-lg-6">Отменить</a>
                             </div>
                          </div>
                     </div>
