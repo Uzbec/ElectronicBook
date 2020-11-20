@@ -19,8 +19,8 @@ import os
 
 
 def index(request):
-    books = book_inf.objects.all()
-    userbooks = userbook.objects.all()
+    books = book_inf.objects.all().order_by('?')
+    userbooks = userbook.objects.all().order_by('-addingDate')
     return render(request, 'index.html',
                   {'books': books, 'userbooks': userbooks})
 
