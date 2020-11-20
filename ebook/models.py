@@ -53,11 +53,11 @@ class userbook(models.Model):
         ('False', 'В обработке'),
         ('Refused', 'Отказано')
     )
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True,
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,
                                 default='',
                                 verbose_name="Связь с таблицей пользователей")
     # booksid = models.CharField("id книги", max_length=30, default='')
-    book = models.OneToOneField(book_inf, on_delete=models.CASCADE, null=True,
+    book = models.ForeignKey(book_inf, on_delete=models.CASCADE, null=True,
                                 default='',
                                 verbose_name="Связь с таблицей книг")
     status = models.CharField("Статуc", choices=CHOICES, default='False',
