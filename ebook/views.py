@@ -19,7 +19,9 @@ from .models import book_inf, users_inf, userbook
 
 def index(request):
     books = book_inf.objects.all()
-    return render(request, 'index.html', {'books': books})
+    userbooks = userbook.objects.all()
+    return render(request, 'index.html',
+                  {'books': books, 'userbooks': userbooks})
 
 
 def login(request):
@@ -54,7 +56,7 @@ def reg_user(request):
 
 def userbooks(request, userid):
     user = User.objects.get(id=userid)
-    books = userbook.objects.filter(user=user)
+    books = userbook.objects.filter(user=user, status="True")
     return render(request, 'userbooks.html', {'books': books, 'user': user})
 
 
@@ -92,13 +94,12 @@ def confirmaddbooktouser(request):
     bookid = request.GET.get("bookid", "")
     user = User.objects.get(id=userid)
     book = book_inf.objects.get(id=bookid)
-    confirmedbook = userbook(user=user)
-    confirmedbook.book = book
+    confirmedbook = userbook.objects.get(user=user, book=book)
     confirmedbook.status = 'True'
     confirmedbook.save()
     # books = userbook.objects.filter(status="False")
     # return render(request, 'managingbookslibr.html', {'books': books})
-    return HttpResponseRedirect("/managingbookslibr/")
+    return HttpResponseRedirect("/managingbookslibr")
 
 
 def canceladdbooktouser(request):
@@ -106,9 +107,8 @@ def canceladdbooktouser(request):
     bookid = request.GET.get("bookid", "")
     user = User.objects.get(id=userid)
     book = book_inf.objects.get(id=bookid)
-    confirmedbook = userbook(user=user)
-    confirmedbook.book = book
-    confirmedbook.status = 'Refused'
+    confirmedbook = userbook.objects.get(user=user, book=book)
+    confirmedbook.status = 'Refuzed'
     confirmedbook.save()
     books = userbook.objects.filter(status="False")
     # return render(request, 'managingbookslibr.html', {'books': books})
@@ -139,3 +139,8 @@ def delete_book(request):
     delbook = book_inf.objects.get(bookname=book)
     delbook.delete()
     return HttpResponseRedirect("/libradmin/")
+
+
+def downloadbook(request):
+    bookid = request.GET.get("bookid", "")
+    book = book_inf.objects.get(id=bookid)
