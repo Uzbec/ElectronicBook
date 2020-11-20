@@ -1,11 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
 from .models import book_inf, users_inf, userbook
+import os
 
 
 # import time
@@ -144,3 +145,12 @@ def delete_book(request):
 def downloadbook(request):
     bookid = request.GET.get("bookid", "")
     book = book_inf.objects.get(id=bookid)
+    ebook = book.bookfile
+    print(str(ebook))
+    with open(f"media/{ebook}", 'rb') as fh:
+        response = HttpResponse(content_type="application/octet-stream")
+        response[
+            'Content-Disposition'] = 'attachment; filename=' + os.path.basename(
+            f"media/{ebook}")
+        response.write(fh.read())
+    return response
