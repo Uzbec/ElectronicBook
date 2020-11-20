@@ -10,7 +10,7 @@
 {% block content %}
     <div class="main">
         <div class="row">
-            <form class="col-12 col-lg-6" method="POST" action="add_book/">
+            <form class="col-12 col-lg-6" method="POST" enctype="multipart/form-data" action="add_book/">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="Bookname">Название книги</label>
