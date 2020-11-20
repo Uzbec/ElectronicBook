@@ -113,7 +113,7 @@ def add_book(request):
     Bookname = request.POST.get("Bookname")
     Bookauthor = request.POST.get("Bookauthor")
     discriptions = request.POST.get("discriptions")
-    bookimg = request.FILES["bookimg"]
+    bookimg = request.POST.get("bookimg")
     bookfile = request.POST.get("bookfile")
     newbook = book_inf.objects.create(bookname=Bookname)
     newbook.author = Bookauthor
@@ -126,4 +126,9 @@ def add_book(request):
 
 
 def delete_book(request):
-    pass
+    bookid = request.POST.get("Bookid")
+    print(bookid)
+    book = book_inf.objects.get(id=bookid)
+    delbook = book_inf.objects.get(bookname=book)
+    delbook.delete()
+    return HttpResponseRedirect("/libradmin/")
