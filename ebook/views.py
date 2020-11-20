@@ -91,9 +91,12 @@ def confirmaddbooktouser(request):
     userid = request.GET.get("userid", "")
     bookid = request.GET.get("bookid", "")
     user = User.objects.get(id=userid)
-    confirmedbook = userbook(user=user, booksid=bookid, status="True")
+    book = book_inf.objects.get(id=bookid)
+    confirmedbook = userbook(user=user)
+    confirmedbook.book = book
+    confirmedbook.status = 'True'
     confirmedbook.save()
-    books = userbook.objects.filter(status="False")
+    # books = userbook.objects.filter(status="False")
     # return render(request, 'managingbookslibr.html', {'books': books})
     return HttpResponseRedirect("/managingbookslibr/")
 
@@ -102,7 +105,10 @@ def canceladdbooktouser(request):
     userid = request.GET.get("userid", "")
     bookid = request.GET.get("bookid", "")
     user = User.objects.get(id=userid)
-    confirmedbook = userbook(user=user, booksid=bookid, status="Refused")
+    book = book_inf.objects.get(id=bookid)
+    confirmedbook = userbook(user=user)
+    confirmedbook.book = book
+    confirmedbook.status = 'Refused'
     confirmedbook.save()
     books = userbook.objects.filter(status="False")
     # return render(request, 'managingbookslibr.html', {'books': books})
