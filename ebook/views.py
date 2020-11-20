@@ -113,7 +113,8 @@ def add_book(request):
     Bookname = request.POST.get("Bookname")
     Bookauthor = request.POST.get("Bookauthor")
     discriptions = request.POST.get("discriptions")
-    bookimg = request.POST.get("bookimg")
+    bookimg = request.FILES["bookimg"]
+    print(bookimg)
     bookfile = request.POST.get("bookfile")
     newbook = book_inf.objects.create(bookname=Bookname)
     newbook.author = Bookauthor
