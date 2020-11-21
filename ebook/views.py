@@ -9,17 +9,6 @@ from django.db.models import Q
 from .models import book_inf, users_inf, userbook
 import os
 
-from django import template
-
-
-# import time
-# TODO:кнопка добавить
-# TODO:В libradmin add_book/
-# TODO:В libradmin delete_book/
-# TODO:В managingbookslibr confirmaddbooktouser?bookid={{bookItem.id}}&userid={{user.id}}
-# TODO:В managingbookslibr canceladdbooktouser?bookid={{bookItem.id}}
-# TODO:В userbooks downloadbook?bookid={{bookItem.id}}
-
 
 def index(request):
     books = book_inf.objects.all().order_by('?')
