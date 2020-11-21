@@ -127,3 +127,10 @@
     font-weight: bolder;
     margin-bottom: 0px;
 }
+
+.addbtn{
+    position: absolute;
+    top: 1px;
+    right: 16px;
+    z-index: 2;
+}
