@@ -5,8 +5,11 @@ from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
+from django.db.models import Q
 from .models import book_inf, users_inf, userbook
 import os
+
+from django import template
 
 
 # import time
@@ -20,9 +23,10 @@ import os
 
 def index(request):
     books = book_inf.objects.all().order_by('?')
-    userbooks = userbook.objects.all().order_by('-addingDate')
+    newbooks = book_inf.objects.all().order_by('-addingDate')
+    userbooks = userbook.objects.all()
     return render(request, 'index.html',
-                  {'books': books, 'userbooks': userbooks})
+                  {'books': books, 'newbooks': newbooks, 'userbooks': userbooks})
 
 
 def login(request):
@@ -154,3 +158,9 @@ def downloadbook(request):
             f"media/{ebook}")
         response.write(fh.read())
     return response
+
+
+def search_results(request):
+    query = request.GET.get("q", "")
+    books = book_inf.objects.filter(Q(bookname__icontains=query) | Q(author__icontains=query) | Q(discriptions__icontains=query))
+    return render(request, 'search_results.html', {'books': books})
