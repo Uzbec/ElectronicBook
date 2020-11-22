@@ -5,9 +5,14 @@ from django.contrib.auth.models import User
 register = template.Library()
 
 
-@register.simple_tag
+@register.simple_tag(name='if_include')
 def if_include(bookid, userid):
     book = book_inf.objects.get(id=bookid)
     user = User.objects.get(id=userid)
-    t = userbook.objects.get(user=user, book=book)
-    print(t)
+    try:
+        t = userbook.objects.get(user=user, book=book)
+        #print(t)
+        return True
+    except userbook.DoesNotExist:
+        # print("None")
+        return False

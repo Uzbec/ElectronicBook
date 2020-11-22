@@ -6,6 +6,7 @@
 {% block links %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock links %}
+{% load customtags %}
 {% block content %}
     <div class="maini">
         <div class="tabs">
@@ -32,7 +33,8 @@
                                             <small>{{ bookItem.author }}</small>
                                         </div>
                                     </div>
-                                    {% if user.users_inf.status == "ST" %}
+                                    {% if_include bookItem.id user.id as ifinc %}
+                                    {% if user.users_inf.status == "ST" and not ifinc %}
                                         <a href="requestforaddbook?bookid={{bookItem.id}}&userid={{user.id}}" class="btn btn-almbb-small btn-almbb-success addbtn"><i class="fas fa-plus"></i></a>
                                     {% endif %}
                                 </div>
