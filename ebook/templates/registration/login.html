@@ -29,7 +29,7 @@
                                     <span class="input-group-text formInput" id="addon-wrapping"><i class="fas fa-lock"></i></span>
                                 </div>
                                 <input id="id_password" type="password" class="textinput textInput  form-control formInput" name="password" placeholder="Пароль" required>
-                                <div class="input-group-append" @click="showHidePwd()" style="cursor: pointer;">
+                                <div class="input-group-append" onclick="showHidePwd()" style="cursor: pointer;">
                                     <span class="input-group-text formInput">
                                         <i id="eye" class="far fa-eye-slash"></i>
                                     </span>
@@ -46,4 +46,17 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            function showHidePwd(){
+                var input = document.getElementById("id_password");
+                if (input.type === "password") {
+                    input.type = "text";
+                    document.getElementById("eye").className = "far fa-eye";
+                } else {
+                    input.type = "password";
+                    document.getElementById("eye").className = "far fa-eye-slash";
+                }
+            }
+        </script>
 {% endblock content %}
