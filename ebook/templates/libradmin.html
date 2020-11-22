@@ -34,7 +34,7 @@
                 </div>
                 <button type="submit" class="btn btn-rounded-almbb-success">Добавить книгу</button>
             </form>
-            <form class="col-12 col-lg-6" method="POST" action="delete_book/">
+            <form class="col-12 col-lg-6" method="POST" action="delete_book/" data-toggle="validator">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="Bookid">Id книги</label>
