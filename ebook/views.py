@@ -150,3 +150,8 @@ def search_results(request):
     query = request.GET.get("q", "")
     books = book_inf.objects.filter(Q(bookname__icontains=query) | Q(author__icontains=query) | Q(discriptions__icontains=query))
     return render(request, 'search_results.html', {'books': books})
+
+
+def book(request, bookid):
+    book = book_inf.objects.get(id=bookid)
+    return render(request, 'book.html', {'book': book})

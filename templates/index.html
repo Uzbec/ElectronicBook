@@ -24,7 +24,7 @@
                 <div class="books">
                     <div class="row">
                         {% for bookItem in books  %}
-                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
+                            <div onclick="document.location='/book/{{bookItem.id}}'" class="col-12 col-md-6 col-lg-4 col-xl-3 bookbox">
                                 <div class="book">
                                     <div class="bookImg">
                                         <img src="{{ bookItem.bookimage.url }}" alt="">

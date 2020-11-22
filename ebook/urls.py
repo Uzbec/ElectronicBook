@@ -21,4 +21,5 @@ urlpatterns = [
     path('libradmin/delete_book/', views.delete_book, name='delete_book'),
     path('userbooks/downloadbook/', views.downloadbook, name='downloadbook'),
     path('search_results', views.search_results, name='search_results'),
+    path('book/<int:bookid>', views.book, name='book'),
 ]
