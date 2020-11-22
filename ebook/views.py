@@ -102,11 +102,8 @@ def canceladdbooktouser(request):
     user = User.objects.get(id=userid)
     book = book_inf.objects.get(id=bookid)
     confirmedbook = userbook.objects.get(user=user, book=book)
-    confirmedbook.status = 'Refuzed'
-    confirmedbook.save()
-    books = userbook.objects.filter(status="False")
-    # return render(request, 'managingbookslibr.html', {'books': books})
-    return HttpResponseRedirect("/managingbookslibr/")
+    confirmedbook.delete()
+    return HttpResponseRedirect("/managingbookslibr")
 
 
 def add_book(request):
