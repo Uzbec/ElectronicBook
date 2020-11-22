@@ -12,24 +12,24 @@
         <div class="row">
             <form class="col-12 col-lg-6" method="POST" enctype="multipart/form-data" action="add_book/">
                 {% csrf_token %}
-                <div class="form-group">
+                <div class="form-group" data-toggle="validator">
                     <label for="Bookname">Название книги</label>
-                    <input name="Bookname" type="text" class="form-control" id="Bookname">
+                    <input name="Bookname" type="text" class="form-control" id="Bookname" required>
                 </div>
                 <div class="form-group">
                     <label for="Bookauthor">Автор</label>
-                    <input name="Bookauthor" type="text" class="form-control" id="Bookauthor">
+                    <input name="Bookauthor" type="text" class="form-control" id="Bookauthor" required>
                 </div>
                 <div class="form-group">
                     <label for="discriptions">Описание</label>
-                    <input name="discriptions" type="text" class="form-control" id="discriptions">
+                    <input name="discriptions" type="text" class="form-control" id="discriptions" required>
                 </div>
                 <div class="custom-file">
-                    <input name="bookimg" type="file" class="custom-file-input" id="bookimg" accept="image/*">
+                    <input name="bookimg" type="file" class="custom-file-input" id="bookimg" accept="image/*" required>
                     <label class="custom-file-label" for="bookimg">Выберите обложку</label>
                 </div>
                 <div class="custom-file">
-                    <input name="bookfile" type="file" class="custom-file-input" id="bookfile">
+                    <input name="bookfile" type="file" class="custom-file-input" id="bookfile" required>
                     <label class="custom-file-label" for="bookfile">Добавить файл</label>
                 </div>
                 <button type="submit" class="btn btn-rounded-almbb-success">Добавить книгу</button>
@@ -38,7 +38,7 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="Bookid">Id книги</label>
-                    <input name="Bookid" type="text" class="form-control" id="Bookid">
+                    <input name="Bookid" type="text" class="form-control" id="Bookid" required>
                 </div>
                 <button type="submit" class="btn btn-rounded-almbb-danger">Удалить книгу</button>
             </form>
