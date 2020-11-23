@@ -31,5 +31,14 @@
                 <p>Описание: {{ book.discriptions }}</p>
             </div>
         </div>
+        {% if_include book.id user.id as ifinc %}
+        {% if user.users_inf.status == "ST" and not ifinc %}
+            <hr>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="/requestforaddbook?bookid={{book.id}}&userid={{user.id}}" class="btn btn-almbb-success">Добавить к себе</a>
+                </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock content %}
