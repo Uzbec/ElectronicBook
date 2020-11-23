@@ -20,6 +20,13 @@
 }
 
 .rating {
+    padding-left: 10px;
     height: 40px;
-    background-color: grey;
+    background-color: #cfd8dc;
+    padding-top: 2px;
+}
+
+.rating span {
+    font-size: 1.1em;
+    font-weight: 500;
 }

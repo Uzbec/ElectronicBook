@@ -15,12 +15,19 @@
                     <img class="avatar" src="{{ book.bookimage.url }}" alt="" loading="lazy">
                 </div>
                 <div class="rating">
-
+                    <span>Рейтинг: </span>
+                    {% for i in kolstars %}
+                        {% if i < rate %}
+                            <i style="margin-left:10px; color: yellow" class="fas fa-star"></i>
+                        {% else %}
+                            <i class="far fa-star"></i>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <h3 style="margin-top: -15px;">Название: {{ book.bookname }}</h3>
-                <small style="margin-top: -15px;">Автор: {{ book.author }}</small>
+                <h3 style="margin-bottom: 0px;">Название: {{ book.bookname }}</h3>
+                <small style="padding-top: -15px;">Автор: {{ book.author }}</small>
                 <p>Описание: {{ book.discriptions }}</p>
             </div>
         </div>

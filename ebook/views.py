@@ -154,4 +154,5 @@ def search_results(request):
 
 def book(request, bookid):
     book = book_inf.objects.get(id=bookid)
-    return render(request, 'book.html', {'book': book})
+    n = 5
+    return render(request, 'book.html', {'book': book, 'rate': int(book.rate), 'kolstars': range(n)})
