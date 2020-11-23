@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    E-book
+{% endblock title %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/book.css' %}">
+{% endblock links %}
+{% load customtags %}
+{% block content %}
+    <div class="main container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <img src="{{ book.bookimage.url }}" alt="">
+            </div>
+            <div class="col-12 col-lg-6">
+                <h3>{{ book.bookname }}</h3>
+                <small>{{ book.author }}</small>
+                <p>{{ book.discriptions }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
