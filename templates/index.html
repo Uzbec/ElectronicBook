@@ -56,7 +56,8 @@
                                             <small>{{ bookItem.author }}</small>
                                         </div>
                                     </div>
-                                    {% if user.users_inf.status == "ST" %}
+                                    {% if_include bookItem.id user.id as ifinc %}
+                                    {% if user.users_inf.status == "ST" and not ifinc %}
                                         <a href="requestforaddbook?bookid={{bookItem.id}}&userid={{user.id}}" class="btn btn-almbb-small btn-almbb-success addbtn"><i class="fas fa-plus"></i></a>
                                     {% endif %}
                                 </div>

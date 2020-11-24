@@ -147,9 +147,10 @@ def downloadbook(request):
 
 
 def search_results(request):
+    userbooks = userbook.objects.all()
     query = request.GET.get("q", "")
     books = book_inf.objects.filter(Q(bookname__icontains=query) | Q(author__icontains=query) | Q(discriptions__icontains=query))
-    return render(request, 'search_results.html', {'books': books})
+    return render(request, 'search_results.html', {'books': books, 'userbooks': userbooks})
 
 
 def book(request, bookid):
