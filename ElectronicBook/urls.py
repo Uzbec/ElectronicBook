@@ -21,7 +21,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ebook.urls')),
-    path('/new_year', include('new_year.urls')),
+    path('new_year', include('new_year.urls')),
 ]
 
 if settings.DEBUG:
