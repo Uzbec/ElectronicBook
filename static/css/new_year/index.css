@@ -6,3 +6,7 @@ html, body, .main {
     justify-content: center;
     align-items: center;
 }
+.happy-card {
+    background-color: grey;
+    height: 200px;
+}
