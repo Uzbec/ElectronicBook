@@ -24,11 +24,16 @@
 </head>
 <body>
     <div class="main container-md">
-        <h2 style="text-align: center;">С новым годом!!!</h2>
-        <div class="cards row">
-            <div class="happy-card col-12 col-md-4">
-
-            </div>
+        <h2 style="text-align: center;" class="mb-5">С новым годом!!!</h2>
+        <div class="cards row" style="margin: 0px;">
+            {% for c in congratulations %}
+                <div class="happy-card col-12 col-md-4">
+                    <div class="name">{{c.name}}</div>
+                    <div class="description">
+                        {{c.description}}
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </body>
