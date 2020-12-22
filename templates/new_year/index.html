@@ -21,6 +21,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script src="{% static 'libs/almbb/almbb.js' %}"></script>
+    <script src="{% static 'libs/confetti/party.min.js' %}"></script>
 </head>
 <body>
     <div class="main container-md">
@@ -36,5 +37,16 @@
             {% endfor %}
         </div>
     </div>
+<script>
+    party.screen({
+      count: 1000 * (window.innerWidth / 1980),
+      countVariation: 0.5,
+      angleSpan: 0,
+      yVelocity: -10,
+      yVelocityVariation: -5,
+      rotationVelocityLimit: 9,
+      scaleVariation: 0.8
+    });
+</script>
 </body>
 </html>

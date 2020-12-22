@@ -10,7 +10,7 @@ html, body, .main {
     display: none;
 }
 ::-webkit-scrollbar-thumb {
-    background: #303f9f ;
+    background: #303f9f;
     border-radius: 0.2em;
 }
 ::-webkit-scrollbar-track {
