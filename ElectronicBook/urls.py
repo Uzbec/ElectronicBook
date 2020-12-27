@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ebook.urls')),
     path('new_year', include('new_year.urls')),
+    path('servermonitor', include('server_for_servermonitor.urls')),
 ]
 
 if settings.DEBUG:
